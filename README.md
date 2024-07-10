@@ -1,122 +1,52 @@
-# OpenVPN Access Server Installation Guide
+## Log in to OpenVPN Using OpenVPN Connect
 
-This README file provides a step-by-step guide for setting up OpenVPN Access Server on an Ubuntu 22.04.4 LTS system.
+- [Step 1: Go to the URL and enter credentials](#step-1-go-to-the-url-and-enter-credentials)
+- [Step 2: Download OpenVPN Client Application](#step-2-download-openvpn-client-application)
+- [Step 3: To install OpenVPN Client in Local System](#step-3-to-install-openvpn-client-in-local-system)
+- [Step 4: Open OpenVPN Connect After Installation in Local Computer](#step-4-open-openvpn-connect-after-installation-in-local-computer)
+- [Step 5: Check your new IPv4 Address](#step-5-check-your-new-ipv4-address)
 
-1. [Set Permissions for the SSH Key](#1-set-permissions-for-the-ssh-key)
-2. [Connect to the Server via SSH](#2-connect-to-the-server-via-ssh)
-3. [Update the System](#3-update-the-system)
-4. [Add OpenVPN Access Server Repository](#4-add-openvpn-access-server-repository)
-5. [Add the Repository GPG Key](#5-add-the-repository-gpg-key)
-6. [Install Required Packages](#6-install-required-packages)
-7. [Update Package Lists](#7-update-package-lists)
-8. [Install OpenVPN Access Server](#8-install-openvpn-access-server)
-9. [Access the OpenVPN Access Server Web UI](#9-access-the-openvpn-access-server-web-ui)
-10. [Login to the Admin UI](#10-login-to-the-admin-ui)
+### Step 1: Go to the URL and enter credentials
 
-## Prerequisites
+- Navigate to your browser and enter this Client UI:
 
-1. **SSH Access**: Ensure you have SSH access to your server.
-2. **Root Privileges**: You need root access to install and configure OpenVPN Access Server.
+  [https://64.227.170.44:943/](https://64.227.170.44:943/)
 
-## Steps
+- Initially the webpage does not open, go to `Advanced Settings` and continue to the page.
 
-### 1. Set Permissions for the SSH Key
+<img src="images/WhatsApp Image 2024-07-10 at 16.30.24_ff374d38.jpg" width="600" height="400">
 
-```bash
-chmod 600 key.pem
-```
+- Enter your credentials and click on the `Login` button.
 
-### 2. Connect to the Server via SSH
+<img src="images/Screenshot 2024-07-10 153211.png" alt="OpenVPN Client UI" width="600" height="400">
 
-```bash
-ssh -i key.pem root@["domain-name/ip address"]
-```
+### Step 2: Download OpenVPN Client Application
 
-### 3. Update the System
+<img src="images/Screenshot 2024-07-10 153227.png" alt="Download OpenVPN Client Application" width="600" height="400">
 
-Update the package lists and upgrade the system packages:
+### Step 3: To install OpenVPN Client in Local System
 
-```bash
-sudo apt update
-sudo apt upgrade -y
-```
+- Follow these steps one by one to install the application
 
-### 4. Add OpenVPN Access Server Repository
+<img src="images/Screenshot 2024-07-10 153315.png" alt="Installation Step 1" width="600" height="400">
+<img src="images/Screenshot 2024-07-10 153538.png" alt="Installation Step 2" width="600" height="400">
+<img src="images/Screenshot 2024-07-10 153627.png" alt="Installation Step 3" width="600" height="400">
+<img src="images/Screenshot 2024-07-10 153640.png" alt="Installation Step 4" width="600" height="400">
+<img src="images/Screenshot 2024-07-10 153653.png" alt="Installation Step 5" width="600" height="400">
+<img src="images/Screenshot 2024-07-10 153754.png" alt="Installation Step 6" width="600" height="400">
 
-Add the OpenVPN Access Server repository to your system:
+### Step 4: Open OpenVPN Connect After Installation in Local Computer
 
-```bash
-echo "deb [signed-by=/etc/apt/keyrings/openvpn-as.gpg.key] http://as-repository.openvpn.net/as/debian $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/openvpn-as.list
-```
+<img src="images/Screenshot 2024-07-10 153717.png" alt="OpenVPN Connect Step 1" width="600" height="400">
 
-### 5. Add the Repository GPG Key
+- As you have already logged in before downloading the OpenVPN Connect application through the browser, there is no need to re-enter credentials.
 
-Download and add the GPG key for the OpenVPN Access Server repository:
+<img src="images/Screenshot 2024-07-10 153731.png" alt="OpenVPN Connect Step 2" width="600" height="400">
 
-```bash
-wget --quiet -O - https://as-repository.openvpn.net/as-repo-public.gpg | sudo tee /etc/apt/keyrings/openvpn-as.gpg.key
-```
+- Activate your profile you created before:
 
-### 6. Install Required Packages
+<img src="images/Screenshot 2024-07-10 153744.png" alt="OpenVPN Connect Step 3" width="600" height="400">
 
-Ensure apt-transport-https and ca-certificates packages are installed:
+### Step 5: Check your new IPv4 Address
 
-```bash
-sudo apt install apt-transport-https ca-certificates -y
-```
-
-### 7. Update Package Lists
-
-Update the package lists again to include the OpenVPN repository:
-
-```bash
-sudo apt update
-```
-
-### 8. Install OpenVPN Access Server
-
-Install the OpenVPN Access Server package:
-
-```bash
-sudo apt install -y openvpn-as
-```
-
-### 9. Access the OpenVPN Access Server Web UI
-
-Once the installation is complete, access the Admin and Client UIs using the following URLs:
-
-- Admin UI: https://64.227.170.44:943/admin
-- Client UI: https://64.227.170.44:943/
-
-### 10. Login to the Admin UI
-
-Use the "openvpn" account with the default password provided during installation. You can change the password via the Admin UI.
-
-## Step1:
-
-- ### Go to the url and enter cerendials:
-
-![alt text](<images/Screenshot 2024-07-10 153211.png>)
-
-- ### Download OpenVpn Client Application:
-
-![alt text](<images/Screenshot 2024-07-10 153227.png>)
-
-- ### Steps in Installation of OpenVpn Client Application:
-
-![alt text](<images/Screenshot 2024-07-10 153315.png>)
-![alt text](<images/Screenshot 2024-07-10 153538.png>)
-![alt text](<images/Screenshot 2024-07-10 153627.png>)
-![alt text](<images/Screenshot 2024-07-10 153640.png>)
-![alt text](<images/Screenshot 2024-07-10 153653.png>)
-![alt text](<images/Screenshot 2024-07-10 153754.png>)
-
-- ### OpenVpn Connect:
-
-![alt text](<images/Screenshot 2024-07-10 153717.png>)
-![alt text](<images/Screenshot 2024-07-10 153731.png>)
-![alt text](<images/Screenshot 2024-07-10 153744.png>)
-
-## Your new Ipv4 Address:
-
-![alt text](<images/Screenshot 2024-07-10 132757.png>)
+<img src="images/Screenshot 2024-07-10 132757.png" alt="New IPv4 Address" width="600" height="400">
