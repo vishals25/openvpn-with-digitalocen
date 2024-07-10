@@ -2,6 +2,17 @@
 
 This README file provides a step-by-step guide for setting up OpenVPN Access Server on an Ubuntu 22.04.4 LTS system.
 
+1. [Set Permissions for the SSH Key](#1-set-permissions-for-the-ssh-key)
+2. [Connect to the Server via SSH](#2-connect-to-the-server-via-ssh)
+3. [Update the System](#3-update-the-system)
+4. [Add OpenVPN Access Server Repository](#4-add-openvpn-access-server-repository)
+5. [Add the Repository GPG Key](#5-add-the-repository-gpg-key)
+6. [Install Required Packages](#6-install-required-packages)
+7. [Update Package Lists](#7-update-package-lists)
+8. [Install OpenVPN Access Server](#8-install-openvpn-access-server)
+9. [Access the OpenVPN Access Server Web UI](#9-access-the-openvpn-access-server-web-ui)
+10. [Login to the Admin UI](#10-login-to-the-admin-ui)
+
 ## Prerequisites
 
 1. **SSH Access**: Ensure you have SSH access to your server.
